@@ -8,6 +8,7 @@ public class PalindromeProblemTest {
     private PalindromeProblem palindromeProblem;
     private final String stringOne = "racecar";
     private final String stringTwo = "a";
+    private final String stringThree = "abcba";
 
     @Before
     public void setup() {
@@ -25,37 +26,26 @@ public class PalindromeProblemTest {
     public void returnIndividualCharacterPalindromeTest() {
         String expectedAnswer = "a";
 
-        String actualAnswer = palindromeProblem.findAllPalindromicPartitions("a");
+        String actualAnswer = palindromeProblem.findAllPalindromicPartitions(stringTwo);
 
         assertEquals(expectedAnswer, actualAnswer);
     }
 
     @Test
-    public void findPartitionsWithOddLengthStringTest() {
+    public void findTwoPartitionsStringTest() {
         String expectedAnswer = "a b c b a\na bcb a";
 
-        String actualAnswer = palindromeProblem.findAllPalindromicPartitions("abcba");
+        String actualAnswer = palindromeProblem.findAllPalindromicPartitions(stringThree);
 
         assertEquals(expectedAnswer, actualAnswer);
     }
 
     @Test
-    public void isStringEvenYesTest() {
-        String input = "hide";
-        int length = input.length();
+    public void findThreePartitionsStringTest() {
+        String expectedAnswer = "r a c e c a r\nr aceca r\nr a cec a r";
 
-        boolean actualAnswer = palindromeProblem.isStringEvenLength(length);
+        String actualAnswer = palindromeProblem.findAllPalindromicPartitions(stringOne);
 
-        assertTrue(actualAnswer);
-    }
-
-    @Test
-    public void isStringOddTest() {
-        String input = "hid";
-        int length = input.length();
-
-        boolean actualAnswer = palindromeProblem.isStringOddLength(length);
-
-        assertTrue(actualAnswer);
+        assertEquals(expectedAnswer, actualAnswer);
     }
 }

@@ -3,55 +3,44 @@ package com.stayready;
 public class PalindromeProblem {
 
     public boolean isStringPalindrome(String input) {
-        StringBuilder reversedString = new StringBuilder(input);
-        reversedString.reverse();
-        return input.equals(reversedString.toString());
+        StringBuilder reverse = new StringBuilder(input).reverse();
+        return input.equals(reverse.toString());
     }
 
     public String findAllPalindromicPartitions(String input) {
-        StringBuilder palindromePartitions = new StringBuilder();
-        int length = input.length();
-        if(length == 0 || length == 1) {
+        int lengthOfInputString = input.length();
+        if(lengthOfInputString == 0 || lengthOfInputString == 1) {
             return input;
         }
-        int middle = 0, before = 0, after = 0;
-        String beginning = "", middleString = "", end = "";
+        StringBuilder allPalindromes = new StringBuilder();
         if(isStringPalindrome(input)) {
-            if(isStringEvenLength(length)) {
-            }
-            else {
-                middle = length / 2;
-                before = middle;
-                after = middle;
-                while((after + 1) - (before - 1) != length) {
-                    before = before - 1;
-                    after = after + 2;
-                    middleString = input.substring(before, after);
-                    beginning = input.substring(0, before);
-                    end = input.substring(after);
-                    palindromePartitions.append(beginning + " " + middleString + " " + end + "\n");
-                }
-
-            }
-            int index = 0;
-            for(Character letter: input.toCharArray()) {
-                if(index + 1 != length) {
-                    palindromePartitions.append(letter + " ");
-                }
-                else {
-                    palindromePartitions.append(letter);
-                }
-                index++;
-            }
+            allPalindromes.append(computeIndividualCharacters(input));
+            allPalindromes.append(findPalindromeLengthTwoOrMore(input));
         }
-        return palindromePartitions.reverse().toString();
+        return allPalindromes.toString();
     }
 
-    public boolean isStringEvenLength(int length) {
-        return length % 2 == 0;
+    private String computeIndividualCharacters(String input) {
+        StringBuilder individualCharacters = new StringBuilder();
+        int index = 0;
+        for(Character letter: input.toCharArray()) {
+            individualCharacters.append(index + 1 < input.length() ? letter + " " : letter);
+            index++;
+        }
+        individualCharacters.append("\n");
+        return individualCharacters.toString();
     }
 
-    public boolean isStringOddLength(int length) {
-        return length % 2 == 1;
+    private String findPalindromeLengthTwoOrMore(String input) {
+        StringBuilder palindromePartitions = new StringBuilder();
+        int start = 1;
+        int end = input.length() - 1;
+        while(start != end - 1) {
+            palindromePartitions.append(input.substring(0, start) + " " + input.substring(start, end) + " " + input.substring(end) +"\n");
+            start++;
+            end--;
+        }
+        int indexOfLastNewLine = palindromePartitions.lastIndexOf("\n");
+        return palindromePartitions.toString().substring(0, indexOfLastNewLine);
     }
 }
