@@ -65,4 +65,12 @@ public class PracticeProblem01 {
         }
         return partitions;
     }
+
+    public static void main(String [] args){
+        String str = "racecar";
+        PracticeProblem01 p = new PracticeProblem01();
+        log.info(p.getPartitions(str));
+        log.info(p.getFirstPartitions(str));
+        log.info(p.getSecondPartitions(str));
+    }
 }
