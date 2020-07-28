@@ -52,7 +52,7 @@ public class PracticeProblem01Test {
 
     public void testAllPartitions(){
 
-        String text = "NOT A PALINDROM";
+        String text = "ALSO NOT A PALINDROM";
 
         String expected = "Impossible! This is not a palindrom!";
         String actual = PracticeProblem01.allPartitions(text);
