@@ -21,6 +21,6 @@ public class PalindromeProblem {
     }
 
     public boolean isStringEvenLength(String input) {
-        return false;
+        return input.length() % 2 == 0;
     }
 }

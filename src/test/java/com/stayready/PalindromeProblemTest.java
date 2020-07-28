@@ -1,9 +1,8 @@
 package com.stayready;
 
-import org.junit.Assert;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class PalindromeProblemTest {
     private PalindromeProblem palindromeProblem;
@@ -45,5 +44,14 @@ public class PalindromeProblemTest {
         boolean actualAnswer = palindromeProblem.isStringEvenLength(input);
 
         assertTrue(actualAnswer);
+    }
+
+    @Test
+    public void isStringEvenNoTest() {
+        String input = "hid";
+
+        boolean actualAnswer = palindromeProblem.isStringEvenLength(input);
+
+        assertFalse(actualAnswer);
     }
 }
