@@ -7,4 +7,8 @@ public class PalindromeProblem {
         reversedString.reverse();
         return input.equals(reversedString.toString());
     }
+
+    public String findOnePalindromicPartitions(String input) {
+        return "";
+    }
 }

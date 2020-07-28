@@ -6,6 +6,7 @@ import org.junit.Test;
 
 public class PalindromeProblemTest {
     private PalindromeProblem palindromeProblem;
+    private final String inputtedString = "racecar";
 
     @Before
     public void setup() {
@@ -13,11 +14,18 @@ public class PalindromeProblemTest {
     }
 
     @Test
-    public void isStringPalindrome() {
-        String input = "racecar";
-
-        boolean answer = palindromeProblem.isStringPalindrome(input);
+    public void isStringPalindromeTest() {
+        boolean answer = palindromeProblem.isStringPalindrome(inputtedString);
 
         Assert.assertTrue(answer);
+    }
+
+    @Test
+    public void findOnePalindromicPartitionsTest() {
+        String expectedAnswer = "r a c e c a r";
+
+        String actualAnswer = palindromeProblem.findOnePalindromicPartitions(inputtedString);
+
+        Assert.assertEquals(expectedAnswer, actualAnswer);
     }
 }
