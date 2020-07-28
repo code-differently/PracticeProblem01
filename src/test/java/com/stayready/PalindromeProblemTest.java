@@ -3,10 +3,12 @@ package com.stayready;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class PalindromeProblemTest {
     private PalindromeProblem palindromeProblem;
-    private final String inputtedString = "racecar";
+    private final String stringOne = "racecar";
+    private final String stringTwo = "a";
 
     @Before
     public void setup() {
@@ -15,17 +17,33 @@ public class PalindromeProblemTest {
 
     @Test
     public void isStringPalindromeTest() {
-        boolean answer = palindromeProblem.isStringPalindrome(inputtedString);
+        boolean answer = palindromeProblem.isStringPalindrome(stringOne);
 
-        Assert.assertTrue(answer);
+        assertTrue(answer);
     }
 
     @Test
     public void returnIndividualCharacterPalindromeTest() {
-        String expectedAnswer = "r a c e c a r ";
+        String expectedAnswer = "a ";
 
-        String actualAnswer = palindromeProblem.findAllPalindromicPartitions(inputtedString);
+        String actualAnswer = palindromeProblem.findAllPalindromicPartitions(stringTwo);
 
-        Assert.assertEquals(expectedAnswer, actualAnswer);
+        assertEquals(expectedAnswer, actualAnswer);
+    }
+
+//    @Test
+//    public void findTwoPartitionsTest() {
+//        String expectedAnswer = "r a c e c a r\n r aceca r";
+//
+//        String actualAnswer = palindromeProblem.findAllPalindromicPartitions(stringOne);
+//    }
+
+    @Test
+    public void isStringEvenYesTest() {
+        String input = "hide";
+
+        boolean actualAnswer = palindromeProblem.isStringEvenLength(input);
+
+        assertTrue(actualAnswer);
     }
 }
