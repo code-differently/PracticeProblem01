@@ -27,7 +27,7 @@ public class PalindromeProblem {
         StringBuilder palindromePartitions = new StringBuilder(input + "\n");
         int start = 1;
         int end = input.length() - 1;
-        while(start < end) {
+        while(start < end - 1) {
             String palindromeSubset = input.substring(0, start) + " " + input.substring(start, end).replaceAll(" ", "") + " " + input.substring(end) +"\n";
             if(!palindromePartitions.toString().contains(palindromeSubset)) {
                 palindromePartitions.append(palindromeSubset);

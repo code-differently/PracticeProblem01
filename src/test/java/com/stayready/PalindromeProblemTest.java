@@ -9,6 +9,7 @@ public class PalindromeProblemTest {
     private final String stringOne = "racecar";
     private final String stringTwo = "a";
     private final String stringThree = "abcba";
+    private final String stringFour = "abba";
 
     @Before
     public void setup() {
@@ -45,6 +46,15 @@ public class PalindromeProblemTest {
         String expectedAnswer = "r a c e c a r\nr aceca r\nr a cec a r";
 
         String actualAnswer = palindromeProblem.findAllPalindromicPartitions(stringOne);
+
+        assertEquals(expectedAnswer, actualAnswer);
+    }
+
+    @Test
+    public void findPartitionsForEvenStringTest() {
+        String expectedAnswer = "a b b a\na bb a";
+
+        String actualAnswer = palindromeProblem.findAllPalindromicPartitions(stringFour);
 
         assertEquals(expectedAnswer, actualAnswer);
     }
