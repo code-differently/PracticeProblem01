@@ -1,44 +1,41 @@
 package com.stayready;
 
-import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Assert.*;
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 
 public class PracticeProblem01Test {
-    private static final String input01 = "racecar";
 
-    @Test
-    public void getSubPalindronesTest01(){
-        PracticeProblem01 practiceProblem01 = new PracticeProblem01();
-        String expected = "r a c e c a r";
-        String actual = practiceProblem01.getSubPalindrones(input01);
-        Assert.assertEquals(expected,actual);
+    String input;
+    PracticeProblem01 palindrome;
+
+    @Before
+    public void setup(){
+        this.palindrome = new PracticeProblem01();
     }
 
     @Test
-    public void getSubPalindronesTest02(){
-        PracticeProblem01 practiceProblem01 = new PracticeProblem01();
-        String expected = "r aceca r";
-        String actual = practiceProblem01.getSubPalindrones(input01);
-        Assert.assertEquals(expected,actual);
-
+    public void isPalindromeTest(){
+        input = "r";
+        assertTrue(palindrome.isPalindrome(input));
     }
 
     @Test
-    public void getSubPalindronesTest03(){
-        PracticeProblem01 practiceProblem01 = new PracticeProblem01();
-        String expected = "r a cec a r";
-        String actual = practiceProblem01.getSubPalindrones(input01);
-        Assert.assertEquals(expected,actual);
-
+    public void isPalindromeTest2(){
+        input = "r a c e c a r";
+        assertTrue(palindrome.isPalindrome(input));
     }
-
 
     @Test
-    public void isPalinedrineTest(){
-        PracticeProblem01 practiceProblem01 = new PracticeProblem01();
-        Boolean actual = practiceProblem01.isPalindrones("aba");
-        Assert.assertTrue(actual);
+    public void notPalindromeTest(){
+        input = "race";
+        assertFalse(palindrome.isPalindrome(input));
     }
+
+
+
 
 }
