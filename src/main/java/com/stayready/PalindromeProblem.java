@@ -11,6 +11,9 @@ public class PalindromeProblem {
     public String findAllPalindromicPartitions(String input) {
         StringBuilder palindromePartitions = new StringBuilder();
         int length = input.length();
+        if(length == 0 || length == 1) {
+            return input;
+        }
         int middle = 0, before = 0, after = 0;
         String beginning = "", middleString = "", end = "";
         if(isStringPalindrome(input)) {
