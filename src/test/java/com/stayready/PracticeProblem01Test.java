@@ -24,10 +24,18 @@ public class PracticeProblem01Test {
     }
 
     @Test
+    public void isPalindromeTest2(){
+        input = "r a c e c a r";
+        assertTrue(palindrome.isPalindrome(input));
+    }
+
+    @Test
     public void notPalindromeTest(){
-        input = "ra";
+        input = "race";
         assertFalse(palindrome.isPalindrome(input));
     }
+
+
 
 
 }
