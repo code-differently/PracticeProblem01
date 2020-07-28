@@ -9,6 +9,10 @@ public class PalindromeProblem {
     }
 
     public String findOnePalindromicPartitions(String input) {
-        return "";
+        StringBuilder palindromePartitions = new StringBuilder();
+        for(Character letter: input.toCharArray()) {
+            palindromePartitions.append(letter + " ");
+        }
+        return palindromePartitions.toString();
     }
 }

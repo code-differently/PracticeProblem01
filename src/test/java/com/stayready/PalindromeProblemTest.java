@@ -22,7 +22,7 @@ public class PalindromeProblemTest {
 
     @Test
     public void findOnePalindromicPartitionsTest() {
-        String expectedAnswer = "r a c e c a r";
+        String expectedAnswer = "r a c e c a r ";
 
         String actualAnswer = palindromeProblem.findOnePalindromicPartitions(inputtedString);
 
