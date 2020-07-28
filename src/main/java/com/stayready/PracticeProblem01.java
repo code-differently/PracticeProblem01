@@ -4,15 +4,33 @@ import java.util.ArrayList;
 
 public class PracticeProblem01 
 {
+    //Storage for the possible palindromes
     ArrayList <String> storage = new ArrayList<>();
     public PracticeProblem01()
     {
 
     }
 
+    //To get the ArrayList that'll store the possibilities
     public ArrayList getStoredPossibles()
     {
         return storage;
+    }
+
+    //To print oout the storage
+    public void printStoredPossibles()
+    {
+        if (storage.size() == 0)
+        {
+            System.out.println("Storage is empty use checkPalinPossible() method first");
+        }
+        else
+        {
+            for (int i = 0; i < storage.size();i++)
+            {
+                System.out.println(storage.get(i));
+            }
+        }
     }
 
 
