@@ -37,7 +37,7 @@ public class PracticeProblem01Test {
         String palindrome = "racecar";
         //When
         ArrayList sosa = new ArrayList();
-        String[] arr = {"r a cec a r","r aceca r","r a c e c a r"};
+        String[] arr = {"r aceca r","r a cec a r","r a c e c a r"};
         for(String s : arr){
             sosa.add(s);
         }

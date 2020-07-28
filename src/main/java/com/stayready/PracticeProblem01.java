@@ -71,9 +71,14 @@ public class PracticeProblem01 {
             }
             
             counter += 1;
-            partitionTypeBeat.add(listy.toString());
+            result = "";
+            for(Object e : listy){
+                result += e;
+            }
+            partitionTypeBeat.add(result);
         }
         
         return partitionTypeBeat;
+        
     }
 }
