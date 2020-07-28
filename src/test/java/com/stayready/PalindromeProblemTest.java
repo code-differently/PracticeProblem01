@@ -23,35 +23,39 @@ public class PalindromeProblemTest {
 
     @Test
     public void returnIndividualCharacterPalindromeTest() {
-        String expectedAnswer = "a ";
+        String expectedAnswer = "a";
 
-        String actualAnswer = palindromeProblem.findAllPalindromicPartitions(stringTwo);
+        String actualAnswer = palindromeProblem.findAllPalindromicPartitions("a");
 
         assertEquals(expectedAnswer, actualAnswer);
     }
 
-//    @Test
-//    public void findTwoPartitionsTest() {
-//        String expectedAnswer = "r a c e c a r\n r aceca r";
-//
-//        String actualAnswer = palindromeProblem.findAllPalindromicPartitions(stringOne);
-//    }
+    @Test
+    public void findPartitionsWithOddLengthStringTest() {
+        String expectedAnswer = "a b c b a\na bcb a";
+
+        String actualAnswer = palindromeProblem.findAllPalindromicPartitions("abcba");
+
+        assertEquals(expectedAnswer, actualAnswer);
+    }
 
     @Test
     public void isStringEvenYesTest() {
         String input = "hide";
+        int length = input.length();
 
-        boolean actualAnswer = palindromeProblem.isStringEvenLength(input);
+        boolean actualAnswer = palindromeProblem.isStringEvenLength(length);
 
         assertTrue(actualAnswer);
     }
 
     @Test
-    public void isStringEvenNoTest() {
+    public void isStringOddTest() {
         String input = "hid";
+        int length = input.length();
 
-        boolean actualAnswer = palindromeProblem.isStringEvenLength(input);
+        boolean actualAnswer = palindromeProblem.isStringOddLength(length);
 
-        assertFalse(actualAnswer);
+        assertTrue(actualAnswer);
     }
 }
