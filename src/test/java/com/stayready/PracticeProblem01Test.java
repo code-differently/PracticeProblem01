@@ -20,4 +20,10 @@ public class PracticeProblem01Test {
 
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void isPalindrom() {
+        boolean actual= problem.isPalindrome(input01);
+        Assert.assertEquals(expected, actual);
+    }
 }
