@@ -21,10 +21,10 @@ public class PalindromeProblemTest {
     }
 
     @Test
-    public void findOnePalindromicPartitionsTest() {
+    public void returnIndividualCharacterPalindromeTest() {
         String expectedAnswer = "r a c e c a r ";
 
-        String actualAnswer = palindromeProblem.findOnePalindromicPartitions(inputtedString);
+        String actualAnswer = palindromeProblem.findAllPalindromicPartitions(inputtedString);
 
         Assert.assertEquals(expectedAnswer, actualAnswer);
     }

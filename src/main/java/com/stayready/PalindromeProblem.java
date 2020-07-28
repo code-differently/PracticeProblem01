@@ -8,10 +8,12 @@ public class PalindromeProblem {
         return input.equals(reversedString.toString());
     }
 
-    public String findOnePalindromicPartitions(String input) {
+    public String findAllPalindromicPartitions(String input) {
         StringBuilder palindromePartitions = new StringBuilder();
-        for(Character letter: input.toCharArray()) {
-            palindromePartitions.append(letter + " ");
+        if(isStringPalindrome(input)) {
+            for(Character letter: input.toCharArray()) {
+                palindromePartitions.append(letter + " ");
+            }
         }
         return palindromePartitions.toString();
     }
